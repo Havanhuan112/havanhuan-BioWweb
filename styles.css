@@ -1,70 +1,124 @@
-/* Nền hiệu ứng */
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: #fff;
-  text-align: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #141e30;
+    color: #fff;
+    overflow: hidden;
 }
 
-/* Hiệu ứng chữ chạy */
-#animated-text {
-  font-size: 2.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(40, end), blink-caret 0.5s step-end infinite;
-  margin: 20px auto;
-  border-right: 3px solid #fff;
+/* Particles Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-/* Animation */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+/* Card Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-@keyframes blink-caret {
-  50% { border-color: transparent; }
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
 }
 
-/* Vùng logo */
+/* Logo with bounce animation */
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
 }
 
-canvas {
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-/* Vùng thông tin */
-.bio-content {
-  margin: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/* Title and Subtitle */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
-.buttons button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin: 10px;
-  background-color: #ff6f61;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
+.subtitle {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 20px;
 }
 
-.buttons button:hover {
-  transform: scale(1.1);
-  background-color: #ff3d2e;
+/* Buttons */
+.buttons .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn.spotify {
+    background: #1DB954;
+}
+
+.btn.pandora {
+    background: #005FFF;
+}
+
+.btn.itunes {
+    background: #FC5C65;
+}
+
+.btn.youtube {
+    background: #FF0000;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1DB954;
 }
